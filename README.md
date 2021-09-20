@@ -5,4 +5,4 @@ find something that might peak your interest.
 
 Todos that I am not gonna make a project for :
 
-- Make a site for github pages so as to host them online in some way
+- [ ] Make a site for github pages so as to host them online in some way
