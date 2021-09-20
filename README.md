@@ -3,6 +3,13 @@
 This is collection of personal notes. You can have look around and
 find something that might peak your interest.
 
-Todos that I am not gonna make a project for :
+### Why not use notion ?
+I do use notion but for more personal stuff. Plus I can check these notes from 
+anywhere. Sure They are not that good looking but they work pretty fine cause 
+when I am learning stuff I tend to be in my editor and thus this the best solution
+I came up with. 
 
-- [ ] Make a site for github pages so as to host them online in some way
+
+### TODOS
+- [ ] Site to see these notes better.
+- [ ] Automate in someway
