@@ -36,13 +36,13 @@
    " I Hate errorbells and everyone does
    set noerrorbells
 
-			" A menu in command line
+" A menu in command line
    set wildmenu
 
-			" If nothing works mouse works
+" If nothing works mouse works
    set mouse=a
    
-   " These are normal tab settings
+" These are normal tab settings
 			set smartindent
    set expandtab
    set tabstop=2
@@ -54,33 +54,33 @@
    set hlsearch
    set smartcase 
 
-			" All these 4 go together
+" All these 4 go together
    set noswapfile
    set nobackup
    set undodir=~/.nvim/undodir
    set undofile
 
-			" I like seeing the line highlighted
+" I like seeing the line highlighted
    set cursorline
 
-			" Signs in signcolumn
+" Signs in signcolumn
    set signcolumn=yes
 			
-			"	Incremental search see `:h incsearch`
+"	Incremental search see `:h incsearch`
    set incsearch
 
-			" this one is gold scrolls down if u are above 8 lines
+" this one is gold scrolls down if u are above 8 lines
    set scrolloff=8
 
-			"	Show me all the buffers and don't ask me to close them when I want to switch
+"	Show me all the buffers and don't ask me to close them when I want to switch
 			set hidden
 
    set formatoptions-=cro
    set t_Co=256
 
-			" For better Coding experience
+" For better Coding experience
    set colorcolumn=80
 
-			" Good command
+" Good command
    set icm=split
    ```
