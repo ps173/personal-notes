@@ -8,8 +8,7 @@ You can no longer stick your head in the sand and pretend that “plain” text 
 **There Ain’t No Such Thing As Plain Text.**
 
 If you have a string, in memory, in a file, or in an email message, you have to know 
-what encoding it is in or you cannot interpret it or display it to users correctly." 
-- Joel Spolsky
+what encoding it is in or you cannot interpret it or display it to users correctly." - Joel Spolsky
 
 ### A Little Bit Of History
 
