@@ -13,3 +13,10 @@ I came up with.
 ### TODOS
 - [ ] Site to see these notes better.
 - [ ] Automate in someway
+
+
+# Misc 
+
+I didn't where to put these still figuring out :
+
+windows : You can type "." in run prompt to open explorer in user directory
