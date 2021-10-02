@@ -58,10 +58,10 @@ let g:netrw_winsize = 25
    -  There is `.vimrc` file for normal `vim` and `.config/nvim/init.vim` for `nvim`
    -  In these files u can add ur personal settings for vim. Some simple settings
       that I recommend are :
-   ```vim
-   " I Hate errorbells and everyone does
-   set noerrorbells
-   ```
+
+```viml
+" I Hate errorbells and everyone does
+set noerrorbells
 
 " A menu in command line
 set wildmenu
@@ -112,4 +112,4 @@ set icm=split
 
 ```
 
-```
+This are some important sets. 
