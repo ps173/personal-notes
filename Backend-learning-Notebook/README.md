@@ -6,13 +6,15 @@
 
 # Notes
 
-[Basics of any backend framework](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Basics_of_backend_framework.md)
+- [Basics of any backend framework](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Basics_of_backend_framework.md)
 
-[HTTP , TCP and OSI Model](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Http_Tcp_Osi_Model.md)
+- [HTTP , TCP and OSI Model](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Http_Tcp_Osi_Model.md)
 
-[Sessions and cookies](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Sessions_And_Cookies.md)
+- [Understanding Internet](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Understanding-Internet.md)
 
-[Data Buffers](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Data_Buffers.md)
+- [Sessions and cookies](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Sessions_And_Cookies.md)
+
+- [Data Buffers](https://github.com/ps173/personal-notes/blob/master/Backend-learning-Notebook/Data_Buffers.md)
 
 Some seriously cool resources :
 
