@@ -8,7 +8,7 @@ Well Yea html will work totally fine. But I wanted to try something new.
 I choose svelte as a the other framework. I wanted to try it for the longest
 time. And thus I choose svelte.
 
-I like lot of stuff about svelte. The idea of keeping things less complex is
+I like lot of stuff about svelte. The idea of keeping things less complex and fast to code is
 very likeable. If I would have tried using svelte right after learning js,
 I think it would be easier than getting used to react. Here's my opinion or more
 of a description of svelte. I might be wrong about something so pardon me there as
@@ -18,14 +18,15 @@ Also Since I have made the intro this long. I might just say that I don't really
 framework. I think this [opinionism](https://www.urbandictionary.com/define.php?term=opinionism) is bad 
 I just want to keep this a healthy overview of svelte.
 
-# About Svelte 
+# About Svelte ✌️
 
 Svelte is a UI framework. Unlike react and friends (or should I say enemies), 
 svelte does not use any virtual DOM. Rather it compiles your code to tiny framework less vanilla js.
-This makes the app really fast. Also Svelte does not have any complex state management.
-I learnt most of the stuff about svelte from [svelte-tutorial](https://svelte.dev/tutorial/basics)
+This makes the app really fast. 
 
-# Components in Svelte 
+Also not to mentiont the incredible guide the [svelte-tutorial](https://svelte.dev/tutorial/basics)
+
+# Components in Svelte 🐻‍❄️ 
 
 So let's start with what I think the makes all the frameworks worth using,
 Components. I think making your UI into little components makes UI really easy
@@ -57,7 +58,7 @@ This is my component
 </p>
 ```
 
-# Props in Svelte 
+# Props in Svelte 🐻 
 
 You thought that svelte does not have props.  Svelte has export statements to 
 export props or as I like to say 'recognize props' (Not a proper term don't use it).
@@ -91,7 +92,7 @@ I like how svelte devs explain how this in not javascript-ish.
 
 I am hoping to see it become second nature :)
 
-# Reactivity in Svelte
+# Reactivity in Svelte 🐨
 
 Again as svelte describes it does not uses any complex state management.
 According to the svelte website "At heart of svelte is a powerful system of
@@ -136,7 +137,7 @@ $: square = count * count
 **Here the `$` looks a little weird. But this basically tells svelte compiler
 that whenever any of referenced value statement changes do this thing.** 
 
-# Conditional rendering and Await in markup 
+# Conditional rendering and Await in markup 🐑
 
 To render text conditionally svelte applies a little bit custom markup syntax. 
 
@@ -203,7 +204,7 @@ A random cat 🐈
 	<p style="color: red">{error.message}</p>
 {/await}
 ```
-this code gives you a random cat image. I was really impressed when I first saw this.
+Honestly I was really impressed when I first saw this. This is was so cool see.
 
 Here's the working demo 🐈✨
 <iframe src="https://codesandbox.io/embed/wandering-sunset-ejwo3?fontsize=14&hidenavigation=1&theme=dark&view=preview"
@@ -213,10 +214,22 @@ Here's the working demo 🐈✨
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-# Lifecycle
-about lifecycle methods in svelte
+# Lifecycle ♻️
+Yay! Lifecycle methods. Lifecycle in svelte is quite similar to react. 
 
-# Binding the state
+- The most common lifecycle method is `onMount`. This is basically a function
+that is executed when component is rendered. 
+- `onDestroy` is function that runs when a component is destroyed. 
+- `beforeUpdate` and `afterUpdate` do what there names suggest run a function before or after the component is rendered.
+
+These were quite similar to the lifecycle methods in react. 
+
+The last lifecycle method is `tick`. The `tick` function is unlike other
+lifecycle methods it can be called anytime. It returns a promise that resloves as soon as any pending state changes have been applied to DOM. 
+**In simpler words you can say that when you want to ensure that
+state immediately updates you can run `tick` function.**
+
+# Binding the state 🐲
 
 Do you guys remember the old class based components in react where you had to bind the 
 function to specific component. Svelte does something similar but more simpler looking.
@@ -229,40 +242,101 @@ function to specific component. Svelte does something similar but more simpler l
 ```
 
 this will change the value of name with input provided. The bind-action (in this case value) 
-may change from element to element. The one that applies to all is `this`.
-This something like `useRef` hook from react. It provides you a reference to a rendered element.
+may change from element to element. 
 
-For example you can do something like this :
+### This Binding
+
+One binding that applies to all is `this`. You can compare it to something like `useRef` hook from react. 
+It provides you a reference to a rendered element.
+
+For example you can do something like this ✨:
+<iframe src="https://codesandbox.io/embed/intelligent-roman-7mh87?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="svelte-magic-drawboard"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+And now I can use canvas api just like native javascript. I really like the canvas api
+and wanted to use react but I was not able to get that level of simplicity as in native js.
+Svelte makes it almost similar to native js
+
+# Store 🦄
+Store is a way to manage state across the whole app. You may pass down state to children
+using props but the when you have to share state across various parent components you can use 
+store. A breif overview of stores can be given this way
+```js
+<!-- Store.js : Here we can initialize store -->
+import { writable } from 'svelte/store';
+
+export const count = writable(0);
+```
 ```svelte
+<!-- And let's subscribe this store to App.svelte -->
+<!-- so I can just do --> 
 <script>
-	let canvas;
+import { count } from './stores.js';
 
- onMount(()=>{
-  let ctx = canvas.getContext("2d")
-  ctx.
- })
+let count_value;
+
+count.subscribe(value => {
+		count_value = value;
+});
 </script>
 
-
-<canvas 
- bind:this = {canvas}
-></canvas>
-
-<style>
-	canvas {
-		width: 100%;
-		height: 100%;
-		background-color: #666;
-		-webkit-mask: url(svelte-logo-mask.svg) 50% 50% no-repeat;
-		mask: url(svelte-logo-mask.svg) 50% 50% no-repeat;
-	}
-</style>
-
+<h1>The count is {count_value}</h1>
 ```
 
+Stores are a bit complex topic ( not really quite simple once you go through the tutorial )
+And I am not gonna cover everything about them in this post. So that may be a different blog 
+for different time. Meanwhile if you really wanna know just go on to the [tutorial](https://svelte.dev/tutorial/writable-stores)
 
+# Inbuilt Transitions and animations 🐳
+This one surprised me. Svelte has inbuild transitions , animation and motions. 
 
-# Store
-about store 
+```svelte
+<script>
+	import { blur } from 'svelte/transition'
+	let visible = true;
+</script>
 
-# 
+<label>
+	<input type="checkbox" bind:checked={visible}>
+	visible
+</label>
+
+{#if visible}
+	<p transition:blur>
+		Fades in and out
+	</p>
+{/if}
+```
+This piece of code shows how simple it is to implement the fade transition.  This is all I wanted from frontend frameworks. 
+Isn't this amazing. I just love svelte now. There are more animation related stuff which you can
+again see in the [svelte-tutorial](https://svelte.dev/tutorial/transition-events)
+
+Here's a little navbar that I made using svelte builtin transitions :
+
+<iframe src="https://codesandbox.io/embed/ecstatic-violet-t4rp3?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="simple-navbar-with-svelte"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+# Conclusion 💫
+
+This was just a breifing of svelte. There is so much more that I didn't cover. I have already link svelte tutorial like 10 times in this blog 
+so not gonna do It again. This post really helped me understand lot of stuff about svelte and also react.
+
+What I think of svelte ? Well I think svelte is amazing. I like it and most of the developers out there like it.
+It makes lot of things simpler. Obviously it does not kill all the other frameworks and Neither I will start making
+making all my apps in svelte. Though this aside. I will svelte for lot of apps that I want to quickly setup. 
+This is one thing that I again loved about svelte. The amount of boiler plate that goes in svelte is really low.
+And not mention the app speed. The above 3 example are really fast in comparisont to those written in react or any other 
+framework out there. Also I recently saw [svelte-native](https://svelte-native.technology/) which now makes me want to try it.
+
+Overall Svelte is a amazing and lovely piece of technology. God bless the creators of svelte for making it.
+
+Thanks for reading. Please consider following this took a huge amount of time to write. And if this helps you well don't thank me just 
+follow. I post stuff like this or sometime vim related workflow.
