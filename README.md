@@ -14,3 +14,15 @@ I came up with.
 
 -   [ ] Site to see these notes better.
 -   [ ] Automate in someway
+
+# Projects That I want to work on for fun
+
+-   [ ] Making Your Own module bundler
+-   [ ] Text Based Browser
+-   [ ] A Terminal Based Text-editor in javascript(WIP)
+
+# Some Cool blogs that I like
+
+-   [Joel On Software](https://www.joelonsoftware.com/)
+-   [Azh's Blog](https://web.eecs.utk.edu/~azh/blog/)
+-   [Eli Bendrsky's Blog](https://eli.thegreenplace.net/archives/all)
