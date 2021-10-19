@@ -25,4 +25,9 @@ export default {
 
 ```
 
-Moar Soon..
+### IIFE (Immediately Invoked Function Expression)
+We can immediately call a function in javascript this way
+
+```js
+(()=>{/*Some code goes here*/})()
+```
