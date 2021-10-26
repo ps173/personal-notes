@@ -29,8 +29,16 @@ So in [some blog](https://viljamis.com/2019/why-we-use-web-components/) I read a
 
 >  We had the urge to create a tech-agnostic instead of tech-specific system. A system that is based on web standards and would survive the births and deaths of JavaScript frameworks.
 
-
 # WIP (More Soon)
+
+I made my personal website in webcomponents and It does not uses any external
+libraries and relies solely on the browser supported stuff. Obviously it is not
+minified and I can go a step further and minify my code using webpack and then
+make a new branch on gh-pages and then render that minified thing out for
+better performance but that would not effect the site loading by larger margins
+the personal website is as snappy as ever. Also I did use google lighthouse and
+the site performance was 74. which can be improved further by minifying
+javascript
 
 -----
 Links for further reading :
