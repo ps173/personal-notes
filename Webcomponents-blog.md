@@ -41,3 +41,4 @@ Links for further reading :
 4. https://viljamis.com/2019/why-we-use-web-components/
 5. https://stenciljs.com/
 6. https://lit.dev/
+7. https://blog.logrocket.com/what-happened-to-web-components/
