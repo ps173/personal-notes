@@ -10,18 +10,18 @@ Let's simplify the above statement a bit. So a express middleware is basically a
 that has req,res and next as a parameters. For example,
 
 ```js
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
 function logger(req, res, next) {
   console.log("I am a middleware and I log the text");
   next();
 }
-app.use(logger)
-app.get('/', function (req,res)=>{
- res.send("Hellow World!!")
-})
-app.listen(3000)
+app.use(logger);
+app.get("/", (req, res) => {
+  res.send("Hellow World!!");
+});
+app.listen(3000);
 ```
 
 Now here I have a `logger` function which is a middleware. Yup that's how simple a middleware
