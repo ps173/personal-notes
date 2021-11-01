@@ -38,15 +38,14 @@ html tags to use in your webpages and webapps. To understand them better one nee
 
 - [**Custom ELement**](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) : Custom elements are again set of javascript apis used to define custom elements and
   their behaviour. So suppose you want a text area component in your app. Your requirement is that your text area should
-  have line numbers. So you can create a custom element to extend it with your provided styles. (we will take a look
-  at this example further in the article.)
+  have line numbers. So you can create a custom element to extend it with your provided styles. 
 
 - [**HTML templates**](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) : The `<template>` and `<slot>` elements allow you to write markup that can be reapeated easily.
 
 With these terms out now we can get into how to make web components.
 
-So do you remember we talked about making a web component that is a text area and has a line height well let's make that. So I will start by making a html file.
-let's call this `index.html` and the contents of file will be these
+So let's try making a rich text editor. As a further challenge I will try to keep it really small. So firstly let's start by creating 
+`index.html` file. This is a basic html file which we will use to manually test and play with our component
 
 ```html
 <!DOCTYPE html>
@@ -58,14 +57,72 @@ let's call this `index.html` and the contents of file will be these
     <title>My Custom Text Area</title>
   </head>
   <body>
-    <custom-textarea></custom-textarea>
-    <script src="./CustomTextarea.js"></script>
+    <rich-text-editor></rich-text-editor>
+    <script src="./richTextEditor.js"></script>
   </body>
 </html>
 ```
 
+Now let's start with `richTextEditor.js`. Firstly we will start by creating 
+a `template`. I will call this element `editor`
+
 ```js
-// js code here
+const editor = document.createElement("template");
+editor.innerHTML = `
+  <style>
+    .editor{
+        padding: 2%;
+        border: 1px solid black;
+        min-width: 100px;
+        min-height: 200px;
+        width: 500px;
+        height: auto;
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        color: black;
+        resize: both;
+        overflow: auto;
+    }
+  </style>
+  <div>
+    <div class="editor-controls">
+      <button id="bold" action="bold"><b>Bold</b></button>
+      <button id="italic" action="italic"><em>Italic</em></button>
+      <button id="lists" action="insertunorderedlist">List</button>
+    </div>
+    <div contenteditable=true class="editor">
+    </div>
+  </div>
+`;
+```
+Everything inside template string is just basic html. I also have set a custom `action` attribute
+to the button elements. Next we will make a custom component and attach it to `shadowDom`
+and keep it in `open` mode.[insert open mode explanation here]
+After this I append the editor template to `shadowRoot` which the root of `shadowDom`
+```js
+class RichTextEditor extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(editor.content.cloneNode(true));
+    this.controlButtons = this.shadowRoot.querySelectorAll("button");
+    this.editor = this.shadowRoot.querySelector(".editor");
+  }
+  format(command, value) {
+    document.execCommand(command, false, value);
+  }
+  connectedCallback() {
+    this.controlButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const action = button.getAttribute("action");
+        this.format(action);
+      });
+    });
+    this.editor.innerHTML = this.innerHTML;
+  }
+}
+
+customElements.define("rich-text-editor", RichTextEditor);
 ```
 
 There are advantages of webcomponents over other frameworks. Specifically these advantages being :
