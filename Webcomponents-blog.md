@@ -38,13 +38,13 @@ html tags to use in your webpages and webapps. To understand them better one nee
 
 - [**Custom ELement**](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) : Custom elements are again set of javascript apis used to define custom elements and
   their behaviour. So suppose you want a text area component in your app. Your requirement is that your text area should
-  have line numbers. So you can create a custom element to extend it with your provided styles. 
+  have line numbers. So you can create a custom element to extend it with your provided styles.
 
 - [**HTML templates**](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots) : The `<template>` and `<slot>` elements allow you to write markup that can be reapeated easily.
 
 With these terms out now we can get into how to make web components.
 
-So let's try making a rich text editor. As a further challenge I will try to keep it really small. So firstly let's start by creating 
+So let's try making a rich text editor. As a further challenge I will try to keep it really small. So firstly let's start by creating
 `index.html` file. This is a basic html file which we will use to manually test and play with our component
 
 ```html
@@ -63,7 +63,7 @@ So let's try making a rich text editor. As a further challenge I will try to kee
 </html>
 ```
 
-Now let's start with `richTextEditor.js`. Firstly we will start by creating 
+Now let's start with `richTextEditor.js`. Firstly we will start by creating
 a `template`. I will call this element `editor`
 
 ```js
@@ -95,10 +95,12 @@ editor.innerHTML = `
   </div>
 `;
 ```
+
 Everything inside template string is just basic html. I also have set a custom `action` attribute
 to the button elements. Next we will make a custom component and attach it to `shadowDom`
 and keep it in `open` mode.[insert open mode explanation here]
 After this I append the editor template to `shadowRoot` which the root of `shadowDom`
+
 ```js
 class RichTextEditor extends HTMLElement {
   constructor() {
@@ -147,6 +149,31 @@ better performance but that would not effect the site loading by larger margins
 the personal website is as snappy as ever. Also I did use google lighthouse and
 the site performance was 74. which can be improved further by minifying
 javascript
+
+# Making simple website without frameworks
+
+Recently I made my [personal website](ps173.github.io). This site didn't took me
+lot of time. The primary reason for that was that I didn't took me a lot of time
+to get started. I started with plain html and then went to use webcomponents. Now
+webcomponents are a total different topic for a different blog. Let's just say that
+you can **create your own html tags using web components**.
+
+The main attraction of this website is that it does not uses any framework. It
+also does not depends on external libraries like jquery (pfftt.. who uses it anyways).
+Also reminding you that this does not uses any external css either. All this results in
+nothing special. It's just a website I mean there is nothing extraordinary about it.
+
+Also since it's a personal website I can do anything with it because it is my website.
+I should have total control over what I want to display. The tools and frameworks that
+I use should not hinder my development experience (DevEx should now be a term). I would
+assume that most of us are aware of the problems will package management with javascript.
+Things get broken and we don't know the reason.
+
+This may boil down to "good dependency management". And there are good articles about it like
+[this](https://blog.softwaremill.com/it-depends-the-art-of-dependency-management-in-javascript-f1f9c3cde3f7) and [this](https://maxvynohradov.github.io/blog/tools-to-manage-npm-dependency-in-your-project-as-a-professional/).
+But yea this again comes down to the fact that why so much hustle when all I want to do is
+to make a simple website. So what to do in that case. Just make a website that does not
+uses framework.
 
 ---
 
