@@ -7,6 +7,29 @@ At its core, GraphQL enables declarative data fetching where a client can specif
 GraphQL is often confused with being a database technology. This is a misconception, GraphQL is a query language for APIs - not databases. In that sense it’s database agnostic and effectively can be used in any context where an API is used.
 
 
+query to get pinned repos from github
+run at [github explorer](https://docs.github.com/en/graphql/overview/explorer)
+
+```graphql
+
+query {
+    user(login:"ps173") {
+        pinnedItems(first: 5, types: [REPOSITORY, GIST]) {
+            totalCount
+            edges {
+                node {
+                    ... on Repository {
+                    name
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+```
+
 
 ## Resources for learning-graphql
 - [Graphql Faqs](https://graphql.org/faq/)
